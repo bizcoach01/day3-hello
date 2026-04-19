@@ -1,158 +1,301 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html class="scroll-smooth" lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>앤디김 - 포트폴리오</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            warm: {
-              50: '#FFF8F0',
-              100: '#FFFAF5',
-              200: '#FDEBD0',
-              300: '#F5CBA7',
-              400: '#F5E6D3',
-              500: '#D4845A',
-              600: '#8B7355',
-              700: '#6B4226',
-            }
-          }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>앤디김 | Creative Director Feature</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "error": "#ba1a1a",
+          "surface-tint": "#8f4c27",
+          "on-error": "#ffffff",
+          "inverse-on-surface": "#ffede4",
+          "tertiary-fixed": "#ffdcbf",
+          "on-surface": "#311300",
+          "surface-container": "#ffeadf",
+          "surface-bright": "#fff8f5",
+          "on-tertiary": "#ffffff",
+          "on-primary-fixed": "#341100",
+          "background": "#F9F6F3",
+          "surface-container-lowest": "#ffffff",
+          "tertiary-container": "#b69170",
+          "tertiary-fixed-dim": "#e8bf9b",
+          "on-error-container": "#93000a",
+          "outline-variant": "#d9c2b8",
+          "secondary-fixed": "#fcdeba",
+          "on-tertiary-container": "#442b12",
+          "inverse-primary": "#ffb691",
+          "on-primary-fixed-variant": "#723612",
+          "on-primary-container": "#552000",
+          "on-secondary": "#ffffff",
+          "on-tertiary-fixed-variant": "#5d4126",
+          "surface-variant": "#ffdbc7",
+          "on-secondary-fixed": "#281903",
+          "outline": "#86736b",
+          "primary": "#8f4c27",
+          "secondary-fixed-dim": "#dfc29f",
+          "tertiary": "#77583b",
+          "on-primary": "#ffffff",
+          "surface-container-high": "#ffe3d3",
+          "surface-container-low": "#fff1ea",
+          "surface-container-highest": "#ffdbc7",
+          "on-surface-variant": "#53433c",
+          "inverse-surface": "#4b270d",
+          "on-tertiary-fixed": "#2c1602",
+          "primary-container": "#d4845a",
+          "surface-dim": "#ffd1b5",
+          "surface": "#F9F6F3",
+          "error-container": "#ffdad6",
+          "primary-fixed": "#ffdbcb",
+          "primary-fixed-dim": "#ffb691",
+          "secondary": "#715b3e",
+          "on-background": "#311300",
+          "secondary-container": "#f9dbb7",
+          "on-secondary-fixed-variant": "#574329",
+          "on-secondary-container": "#755f42"
+        },
+        fontFamily: {
+          "headline": ["Noto Serif KR", "serif"],
+          "body": ["Plus Jakarta Sans", "sans-serif"]
         }
       }
     }
-  </script>
+  }
+</script>
+<style type="text/tailwindcss">
+  @layer base {
+    body {
+      @apply bg-background text-on-surface font-body;
+    }
+    h1, h2, h3 {
+      @apply font-headline;
+    }
+  }
+  .editorial-text-stroke {
+    -webkit-text-stroke: 1px rgba(143, 76, 39, 0.2);
+    color: transparent;
+  }
+  .overlap-heading {
+    margin-left: -15%;
+    z-index: 20;
+  }
+  @media (max-width: 768px) {
+    .overlap-heading {
+      margin-left: 0;
+    }
+  }
+</style>
 </head>
-<body class="bg-warm-50 text-warm-600">
-  <header>
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-warm-50/95 backdrop-blur border-b-2 border-warm-400">
-    <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold text-warm-500">앤디김</a>
-      <ul class="hidden md:flex gap-6 list-none">
-        <li><a href="#intro" class="hover:text-warm-500 transition-colors">소개</a></li>
-        <li><a href="#career" class="hover:text-warm-500 transition-colors">경력</a></li>
-        <li><a href="#contact" class="hover:text-warm-500 transition-colors">연락처</a></li>
-      </ul>
-      <button id="menu-btn" class="md:hidden text-warm-700" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-    <ul id="mobile-menu" class="hidden md:hidden px-6 pb-4 list-none">
-      <li><a href="#intro" class="block py-2 hover:text-warm-500 transition-colors">소개</a></li>
-      <li><a href="#career" class="block py-2 hover:text-warm-500 transition-colors">경력</a></li>
-      <li><a href="#contact" class="block py-2 hover:text-warm-500 transition-colors">연락처</a></li>
-    </ul>
-  </nav>
-  </header>
+<body class="selection:bg-primary-fixed selection:text-on-primary-container">
 
-  <main class="pt-16">
-    <section id="intro" class="min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-warm-50 to-warm-200 px-6">
-      <div class="text-center">
-        <div class="w-28 h-28 rounded-full bg-warm-300 mx-auto mb-6 flex items-center justify-center text-5xl">
-          👤
-        </div>
-        <h1 class="text-4xl md:text-5xl font-bold text-warm-700 mb-4">안녕하세요, 앤디김입니다</h1>
-        <p class="text-lg text-warm-600 max-w-lg mx-auto">웹 개발자로서 사용자 경험을 개선하는 일에 열정을 가지고 있습니다.</p>
+<nav class="fixed top-0 w-full z-[100] bg-background/90 backdrop-blur-md border-b border-outline-variant/20">
+  <div class="flex justify-between items-center px-8 py-6 max-w-[1600px] mx-auto">
+    <a class="text-2xl font-black font-headline tracking-tighter uppercase" href="#">앤디김</a>
+    <ul class="hidden md:flex gap-12 items-center text-sm font-bold uppercase tracking-[0.2em] list-none">
+      <li><a class="hover:text-primary transition-colors" href="#intro">Editorial</a></li>
+      <li><a class="hover:text-primary transition-colors" href="#career">Archive</a></li>
+      <li><a class="hover:text-primary transition-colors" href="#contact">Inquiry</a></li>
+    </ul>
+    <button id="menu-btn" class="md:hidden text-on-surface" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-symbols-outlined">menu_open</span>
+    </button>
+  </div>
+  <ul id="mobile-menu" class="hidden md:hidden px-8 pb-4 list-none">
+    <li><a class="block py-2 hover:text-primary transition-colors text-sm font-bold uppercase tracking-[0.2em]" href="#intro">Editorial</a></li>
+    <li><a class="block py-2 hover:text-primary transition-colors text-sm font-bold uppercase tracking-[0.2em]" href="#career">Archive</a></li>
+    <li><a class="block py-2 hover:text-primary transition-colors text-sm font-bold uppercase tracking-[0.2em]" href="#contact">Inquiry</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="min-h-screen flex flex-col md:flex-row pt-20 overflow-hidden" id="intro">
+    <div class="w-full md:w-[45%] h-[614px] md:h-[calc(100vh-5rem)] relative p-8 md:p-12">
+      <div class="w-full h-full relative overflow-hidden group">
+        <img alt="앤디김" class="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" src="image/profile.jpg.png"/>
+        <div class="absolute inset-0 border-[24px] border-background pointer-events-none"></div>
       </div>
-    </section>
-    <section id="career" class="py-20 bg-warm-100 px-6">
-      <div class="max-w-2xl mx-auto">
-        <h2 class="text-3xl font-bold text-warm-700 text-center mb-12">경력</h2>
-        <div class="space-y-6">
-          <div class="border-l-4 border-warm-300 pl-6 py-4 bg-white rounded-r-lg shadow-sm">
-            <p class="text-sm font-semibold text-warm-500">2022 - 현재</p>
-            <h3 class="text-lg font-bold text-warm-700 mt-1">시니어 개발자 · ABC 회사</h3>
-            <p class="text-warm-600 mt-1">프론트엔드 아키텍처 설계 및 팀 리드</p>
+    </div>
+    <div class="w-full md:w-[55%] flex items-center p-8 md:p-20 relative">
+      <div class="overlap-heading">
+        <span class="block text-sm font-bold uppercase tracking-[0.5em] text-primary mb-8">Creative Director Portfolio</span>
+        <h1 class="text-7xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter text-[#311300] mb-8">
+          하이<br/>
+          <span class="italic font-normal editorial-text-stroke">(Hi)</span><br/>
+          앤디김
+        </h1>
+        <p class="max-w-md text-xl md:text-2xl text-[#8B7355] leading-relaxed font-light">
+          웹 개발자로서 사용자 경험을 개선하는 일에 열정을 가지고 있습니다.
+          <span class="block mt-4 text-sm font-bold tracking-widest text-[#311300] uppercase">Seongnam, South Korea</span>
+        </p>
+        <div class="mt-12">
+          <a class="inline-flex items-center gap-4 group" href="#career">
+            <span class="w-12 h-[1px] bg-primary group-hover:w-20 transition-all duration-500"></span>
+            <span class="text-sm font-bold uppercase tracking-widest">Read Feature</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-40 px-6 bg-white" id="career">
+    <div class="max-w-4xl mx-auto">
+      <header class="mb-32 text-center">
+        <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase">Selected Archive</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+        <p class="text-lg text-secondary uppercase tracking-[0.2em] font-medium">Professional Experience &amp; Milestones</p>
+      </header>
+      <div class="space-y-40">
+        <div class="relative group">
+          <div class="absolute -top-20 -left-10 md:-left-20 text-[10rem] md:text-[16rem] font-black text-primary/5 select-none pointer-events-none leading-none z-0">
+            2022
           </div>
-          <div class="border-l-4 border-warm-300 pl-6 py-4 bg-white rounded-r-lg shadow-sm">
-            <p class="text-sm font-semibold text-warm-500">2019 - 2022</p>
-            <h3 class="text-lg font-bold text-warm-700 mt-1">개발자 · XYZ 회사</h3>
-            <p class="text-warm-600 mt-1">React 기반 웹 애플리케이션 개발</p>
+          <div class="relative z-10 flex flex-col items-start pt-10">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="h-[1px] w-8 bg-primary"></span>
+              <span class="text-sm font-bold tracking-widest uppercase text-primary">Present Position</span>
+            </div>
+            <h3 class="text-4xl md:text-6xl font-black text-[#311300] mb-8 leading-tight">시니어 개발자 · 성남DX</h3>
+            <div class="w-full h-[1px] bg-outline-variant/30 mb-8"></div>
+            <p class="text-xl md:text-2xl text-[#8B7355] leading-relaxed font-light mb-10 max-w-2xl">
+              프론트엔드 아키텍처 설계 및 팀 리드를 담당하고 있습니다. 마이크로 프론트엔드 전환을 주도하여 개발 효율성을 40% 개선하였으며, 디자인 시스템 구축을 통해 UI 일관성을 확보했습니다.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span class="text-xs font-bold uppercase tracking-widest px-4 py-2 border border-outline-variant hover:bg-on-surface hover:text-white transition-colors cursor-default">React</span>
+              <span class="text-xs font-bold uppercase tracking-widest px-4 py-2 border border-outline-variant hover:bg-on-surface hover:text-white transition-colors cursor-default">TypeScript</span>
+              <span class="text-xs font-bold uppercase tracking-widest px-4 py-2 border border-outline-variant hover:bg-on-surface hover:text-white transition-colors cursor-default">Tailwind CSS</span>
+            </div>
           </div>
         </div>
-        <div class="mt-10 text-center">
-          <h3 class="text-lg font-semibold text-warm-700 mb-4">기술 스택</h3>
-          <div class="flex flex-wrap gap-3 justify-center">
-            <span class="bg-warm-200 text-warm-700 px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
-            <span class="bg-warm-200 text-warm-700 px-4 py-2 rounded-full text-sm font-medium">React</span>
-            <span class="bg-warm-200 text-warm-700 px-4 py-2 rounded-full text-sm font-medium">Node.js</span>
-            <span class="bg-warm-200 text-warm-700 px-4 py-2 rounded-full text-sm font-medium">TypeScript</span>
-            <span class="bg-warm-200 text-warm-700 px-4 py-2 rounded-full text-sm font-medium">Tailwind CSS</span>
-            <span class="bg-warm-200 text-warm-700 px-4 py-2 rounded-full text-sm font-medium">Git</span>
+        <div class="relative group">
+          <div class="absolute -top-20 -left-10 md:-left-20 text-[10rem] md:text-[16rem] font-black text-primary/5 select-none pointer-events-none leading-none z-0">
+            2019
+          </div>
+          <div class="relative z-10 flex flex-col items-start pt-10">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="h-[1px] w-8 bg-primary"></span>
+              <span class="text-sm font-bold tracking-widest uppercase text-primary">Formation Era</span>
+            </div>
+            <h3 class="text-4xl md:text-6xl font-black text-[#311300] mb-8 leading-tight">개발자 · 크라운AX</h3>
+            <div class="w-full h-[1px] bg-outline-variant/30 mb-8"></div>
+            <p class="text-xl md:text-2xl text-[#8B7355] leading-relaxed font-light mb-10 max-w-2xl">
+              React 기반의 대규모 커머스 웹 애플리케이션 개발에 참여했습니다. 서비스 성능 최적화를 통해 초기 렌더링 시간을 2초 단축시켰으며, 전역 상태 관리 전략을 수립했습니다.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span class="text-xs font-bold uppercase tracking-widest px-4 py-2 border border-outline-variant hover:bg-on-surface hover:text-white transition-colors cursor-default">JavaScript</span>
+              <span class="text-xs font-bold uppercase tracking-widest px-4 py-2 border border-outline-variant hover:bg-on-surface hover:text-white transition-colors cursor-default">Node.js</span>
+              <span class="text-xs font-bold uppercase tracking-widest px-4 py-2 border border-outline-variant hover:bg-on-surface hover:text-white transition-colors cursor-default">Git</span>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <section id="contact" class="py-20 bg-warm-50 px-6">
-      <div class="max-w-md mx-auto">
-        <h2 class="text-3xl font-bold text-warm-700 text-center mb-12">연락처</h2>
-        <form action="mailto:ibaker@naver.com" method="POST" enctype="text/plain" class="space-y-5">
+    </div>
+  </section>
+
+  <section class="py-40 bg-[#F9F6F3]" id="contact">
+    <div class="max-w-[1600px] mx-auto px-8 grid md:grid-cols-2 gap-20">
+      <div>
+        <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-12 uppercase leading-none">Let's<br/>Connect</h2>
+        <div class="space-y-12">
           <div>
-            <label for="name" class="block text-sm text-warm-600 mb-1">이름</label>
-            <input type="text" id="name" name="name" required
-              class="w-full px-4 py-3 border-2 border-warm-400 rounded-lg bg-white text-warm-700 placeholder-warm-300 focus:outline-none focus:border-warm-500 transition-colors"
-              placeholder="이름을 입력하세요">
+            <span class="block text-xs font-bold uppercase tracking-[0.3em] text-primary mb-4">Direct Email</span>
+            <a class="text-2xl md:text-4xl font-headline border-b-2 border-primary pb-2 hover:text-primary transition-colors" href="mailto:ibaker@naver.com">ibaker@naver.com</a>
           </div>
           <div>
-            <label for="email" class="block text-sm text-warm-600 mb-1">이메일</label>
-            <input type="email" id="email" name="email" required
-              class="w-full px-4 py-3 border-2 border-warm-400 rounded-lg bg-white text-warm-700 placeholder-warm-300 focus:outline-none focus:border-warm-500 transition-colors"
-              placeholder="이메일을 입력하세요">
+            <span class="block text-xs font-bold uppercase tracking-[0.3em] text-primary mb-4">Social Presence</span>
+            <div class="flex gap-8 text-lg font-bold uppercase tracking-widest">
+              <a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+              <a class="hover:text-primary transition-colors" href="#">GitHub</a>
+              <a class="hover:text-primary transition-colors" href="#">Instagram</a>
+            </div>
           </div>
-          <div>
-            <label for="message" class="block text-sm text-warm-600 mb-1">메시지</label>
-            <textarea id="message" name="message" rows="4" required
-              class="w-full px-4 py-3 border-2 border-warm-400 rounded-lg bg-white text-warm-700 placeholder-warm-300 focus:outline-none focus:border-warm-500 transition-colors resize-none"
-              placeholder="메시지를 입력하세요"></textarea>
+        </div>
+      </div>
+      <div class="bg-white p-12 md:p-20 shadow-2xl">
+        <form action="mailto:ibaker@naver.com" method="POST" enctype="text/plain" class="space-y-8">
+          <div class="grid grid-cols-1 gap-8">
+            <div class="border-b border-outline-variant pb-4">
+              <label class="block text-[10px] font-bold uppercase tracking-[0.3em] mb-4" for="name">Your Name</label>
+              <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-xl font-headline placeholder:text-outline-variant" id="name" name="name" placeholder="성함을 입력해주세요" required type="text"/>
+            </div>
+            <div class="border-b border-outline-variant pb-4">
+              <label class="block text-[10px] font-bold uppercase tracking-[0.3em] mb-4" for="email">Email Address</label>
+              <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-xl font-headline placeholder:text-outline-variant" id="email" name="email" placeholder="email@example.com" required type="email"/>
+            </div>
           </div>
-          <button type="submit"
-            class="w-full bg-warm-500 text-white font-semibold py-3 rounded-lg hover:bg-warm-700 transition-colors">
-            보내기
+          <div class="border-b border-outline-variant pb-4">
+            <label class="block text-[10px] font-bold uppercase tracking-[0.3em] mb-4" for="message">Message</label>
+            <textarea class="w-full bg-transparent border-none p-0 focus:ring-0 text-xl font-headline placeholder:text-outline-variant resize-none" id="message" name="message" placeholder="문의 내용을 입력해주세요" required rows="3"></textarea>
+          </div>
+          <button class="w-full bg-on-surface text-white py-6 px-12 font-bold uppercase tracking-[0.4em] hover:bg-primary transition-all duration-500 flex items-center justify-center gap-4 group" type="submit">
+            Send Inquiry
+            <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_right_alt</span>
           </button>
         </form>
       </div>
-    </section>
-    <footer class="py-6 text-center text-sm text-warm-700 bg-warm-400">
-      &copy; 2026 앤디김. All rights reserved.
-    </footer>
-  </main>
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    function openMenu() {
-      mobileMenu.classList.remove('hidden');
-      menuBtn.setAttribute('aria-expanded', 'true');
-      menuBtn.setAttribute('aria-label', '메뉴 닫기');
+    </div>
+  </section>
+</main>
+
+<footer class="w-full py-20 bg-on-surface text-background">
+  <div class="max-w-[1600px] mx-auto px-8">
+    <div class="flex flex-col md:flex-row justify-between items-end gap-12 border-b border-background/10 pb-20">
+      <div>
+        <div class="text-4xl md:text-6xl font-black font-headline tracking-tighter uppercase mb-6">앤디김</div>
+        <p class="text-background/50 text-sm tracking-widest uppercase">Senior Frontend Architect &amp; Creative Developer</p>
+      </div>
+      <div class="flex flex-col items-end gap-4 text-xs font-bold uppercase tracking-[0.3em]">
+        <a class="hover:text-primary transition-colors" href="#intro">Top</a>
+        <a class="hover:text-primary transition-colors" href="#career">Archive</a>
+        <a class="hover:text-primary transition-colors" href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-center mt-12 text-[10px] font-bold uppercase tracking-[0.2em] text-background/30">
+      <div>&copy; 2026 앤디김. All rights reserved.</div>
+      <div>Built for High-End Creative Direction</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  function openMenu() {
+    mobileMenu.classList.remove('hidden');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    menuBtn.setAttribute('aria-label', '메뉴 닫기');
+  }
+  function closeMenu() {
+    mobileMenu.classList.add('hidden');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', '메뉴 열기');
+  }
+  menuBtn.addEventListener('click', () => {
+    const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
     }
-    function closeMenu() {
-      mobileMenu.classList.add('hidden');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.setAttribute('aria-label', '메뉴 열기');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      menuBtn.focus();
     }
-    menuBtn.addEventListener('click', () => {
-      const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        closeMenu();
-      });
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
-        closeMenu();
-        menuBtn.focus();
-      }
-    });
-  </script>
+  });
+</script>
+
 </body>
 </html>
