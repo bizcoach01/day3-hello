@@ -1,1 +1,56 @@
-Hello World 123
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홍길동 - 포트폴리오</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            warm: {
+              50: '#FFF8F0',
+              100: '#FFFAF5',
+              200: '#FDEBD0',
+              300: '#F5CBA7',
+              400: '#F5E6D3',
+              500: '#D4845A',
+              600: '#8B7355',
+              700: '#6B4226',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-warm-50 text-warm-600">
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-warm-50/95 backdrop-blur border-b-2 border-warm-400">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold text-warm-500">홍길동</a>
+      <div class="hidden md:flex gap-6">
+        <a href="#intro" class="hover:text-warm-500 transition">소개</a>
+        <a href="#career" class="hover:text-warm-500 transition">경력</a>
+        <a href="#contact" class="hover:text-warm-500 transition">연락처</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-warm-700" aria-label="메뉴">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+      <a href="#intro" class="block py-2 hover:text-warm-500 transition">소개</a>
+      <a href="#career" class="block py-2 hover:text-warm-500 transition">경력</a>
+      <a href="#contact" class="block py-2 hover:text-warm-500 transition">연락처</a>
+    </div>
+  </nav>
+
+  <!-- Sections will be added here -->
+  <main class="pt-16">
+  </main>
+</body>
+</html>
